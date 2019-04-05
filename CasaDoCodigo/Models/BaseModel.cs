@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
-namespace CasaDoCodigo.Modelss
+namespace CasaDoCodigo.Models
 {
     [DataContract]
     public class BaseModel
@@ -13,8 +13,4 @@ namespace CasaDoCodigo.Modelss
         [DataMember]
         public int Id { get; protected set; }
     }
-
-    
-
-    
 }
