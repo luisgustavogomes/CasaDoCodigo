@@ -15,6 +15,8 @@ namespace CasaDoCodigo.Repositories
             _context = context;
         }
 
+        
+
         public void SaveProdutos(List<Livro> livros)
         {
             foreach (var item in livros)
@@ -22,6 +24,11 @@ namespace CasaDoCodigo.Repositories
                 _context.Set<Produto>().Add(new Produto(item.Codigo, item.Nome, item.Preco));
             }
             _context.SaveChanges();
+        }
+
+        public IList<Produto> GetProdutos()
+        {
+            return _context.Set<Produto>().ToList();
         }
 
         public class Livro

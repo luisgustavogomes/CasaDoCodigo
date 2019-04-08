@@ -28,7 +28,7 @@ namespace CasaDoCodigo
         public void InicializaDB()
         {
             _context.Database.EnsureCreated();
-            _produtoRepository.SaveProdutos(GetLivros());
+            //_produtoRepository.SaveProdutos(GetLivros());
         }
 
         private static List<Livro> GetLivros()
