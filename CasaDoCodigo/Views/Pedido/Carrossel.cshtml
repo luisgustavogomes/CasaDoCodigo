@@ -2,7 +2,7 @@
     ViewData["Title"] = "Carrossel";
 }
 
-@model List<Produto>
+@model IList<Produto>
 <h3>Catálogo</h3>
 
 <div id="my-carousel" class="carousel slide" data-ride="carousel">
@@ -31,7 +31,7 @@
                                     <div class="produto-nome">@produto.Nome</div>
                                     <div><h4><strong>R$ @produto.Preco</strong></h4></div>
                                     <div class="text-center">
-                                        <a asp-controller="Pedido" asp-route-codigo="(@produto.Codigo)" asp-action="Carrinho" class="btn btn-success">Adicionar</a>
+                                        <a asp-controller="Pedido" asp-route-codigo="@produto.Codigo" asp-action="Carrinho" class="btn btn-success">Adicionar</a>
                                     </div>
                                 </div>
                             </div>
