@@ -9,7 +9,9 @@ namespace CasaDoCodigo.Repositories
 {
     public class ProdutoRepository : BaseRepository<Produto>, IProdutoRepository
     {
-        public ProdutoRepository(ApplicationContext context) : base(context) { }
+        public ProdutoRepository(ApplicationContext context) : base(context)
+        {
+        }
 
         public void SaveProdutos(List<Livro> livros)
         {

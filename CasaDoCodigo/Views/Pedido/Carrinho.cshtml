@@ -27,7 +27,6 @@
     <div class="panel-body">
         @foreach (var item in Model)
         {
-
             <div class="row row-center linha-produto">
                 <div class="col-md-3">
                     <img class="img-produto-carrinho" src="/images/produtos/large_@(item.Produto.Codigo).jpg" />
@@ -56,8 +55,6 @@
                     </span>
                 </div>
             </div>
-
-
         }
 
 
@@ -84,8 +81,8 @@
             <a class="btn btn-success" asp-controller="Pedido" asp-action="Carrossel">
                 Adicionar Produtos
             </a>
-            <a class="btn btn-success" asp-controller="Pedido" asp-action="Cadastro">
-                Preencher Cadastro
+            <a class="btn btn-success" asp-controller="Pedido" asp-action="Resumo">
+                Finalizar Pedido
             </a>
         </div>
     </div>
