@@ -9,5 +9,17 @@ namespace CasaDoCodigo.Repositories
     public class ItemPedidoRepository : BaseRepository<ItemPedido>, IItemPedidoRepository
     {
         public ItemPedidoRepository(ApplicationContext context) : base(context) { }
+
+        public ItemPedido GetItemPedido(int itemPedidoId)
+        {
+           return dbSet.Where(i => i.Id == itemPedidoId).SingleOrDefault();
+        }
+
+        public void RemoveItemPedido(int itemPedidoId)
+        {
+            dbSet.Remove(GetItemPedido(itemPedidoId));
+        }
     }
+
+
 }
