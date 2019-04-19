@@ -14,6 +14,8 @@ class Carrinho {
     }
 
     updateQuantidade(input) {
+        debugger;
+
         let data = this.getData(input); 
         this.postQuantidade(data);
     }
@@ -26,17 +28,14 @@ class Carrinho {
     }
 
     postQuantidade(data) {
-
-        let token = $('[name=__RequestVerificationToken]').val();
+        let token = $('[name=__RequestVerificationToken]')
 
         let headers = {};
-
         headers['RequestVerificationToken'] = token;
-        debugger;
-        $.ajax({
+
+        $ajax({
             url: '/pedido/updatequantidade',
             type: 'POST',
-            contentType: 'application/json',
             data: JSON.stringify(data),
             headers: headers
         }).done(function (response) {
