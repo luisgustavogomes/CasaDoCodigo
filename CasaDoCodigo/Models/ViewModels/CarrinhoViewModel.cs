@@ -10,6 +10,7 @@ namespace CasaDoCodigo.Models.ViewModels
 
         public IList<ItemPedido> Items { get; }
         public decimal Total => Items.Sum(i => i.Quantidade * i.PrecoUnitario);
+        public string QtdeRegistro => Items.Count.ToString();
 
         public CarrinhoViewModel(IList<ItemPedido> items)
         {

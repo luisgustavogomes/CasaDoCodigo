@@ -34,12 +34,18 @@ class Carrinho {
         }).done(function (response) {
             let itemPedido = response.itemPedido;
             let linhaDoItem = $('[item-id=' + itemPedido.id + ']')
+
             linhaDoItem.find('input').val(itemPedido.quantidade);
             linhaDoItem.find('[subtotal]').html((itemPedido.subtotal).duasCasas());
-            let carrinhoViewModel = response.carrinhoViewModel;
-            $('[numero-itens]').html('Total: R$ ' + carrinhoViewModel.itens.length + ' itens');
 
-            debugger;
+            let carrinhoViewModel = response.carrinhoViewModel;
+
+            $('[numero-itens]').html('Total: ' + carrinhoViewModel.qtdeRegistro + ' itens');
+            $('[total]').html((carrinhoViewModel.total).duasCasas());
+
+            if (itemPedido.quantidade <= 0) {
+                linhaDoItem.remove();
+            }
         });
     }
 
