@@ -15,7 +15,9 @@ namespace CasaDoCodigo.Controllers
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IItemPedidoRepository _itemPedidoRepository;
 
-        public PedidoController(IProdutoRepository produtoRepository, IPedidoRepository pedidoRepository, IItemPedidoRepository itemPedidoRepository)
+        public PedidoController(IProdutoRepository produtoRepository, 
+                                 IPedidoRepository pedidoRepository, 
+                             IItemPedidoRepository itemPedidoRepository)
         {
             _produtoRepository = produtoRepository;
             _pedidoRepository = pedidoRepository;
